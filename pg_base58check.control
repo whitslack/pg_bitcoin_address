@@ -1,0 +1,2 @@
+comment = 'Base58Check functions and base type'
+default_version = '1.0'
