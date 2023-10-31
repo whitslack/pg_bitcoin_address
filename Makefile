@@ -1,5 +1,5 @@
-PG_CONFIG = pg_config
-PKG_CONFIG = pkg-config
+PG_CONFIG ?= pg_config
+PKG_CONFIG ?= pkg-config
 
 MODULE_big = pg_base58check
 EXTENSION = pg_base58check
