@@ -1,5 +1,8 @@
 #include <postgres.h>
 #include <fmgr.h>
+#if HAVE_VARATT_H
+# include <varatt.h>
+#endif
 
 #include <base58check.h>
 

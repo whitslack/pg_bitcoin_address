@@ -18,6 +18,11 @@ PG_CFLAGS += $(LIBBASE58CHECK_CFLAGS)
 PG_LDFLAGS += $(LIBBASE58CHECK_LDFLAGS)
 SHLIB_LINK += $(LIBBASE58CHECK_LDLIBS)
 
+# PostgreSQL 16 moves some definitions into a new varatt.h
+ifneq ($(wildcard $(shell $(PG_CONFIG) --includedir-server)/varatt.h),)
+PG_CPPFLAGS += -DHAVE_VARATT_H=1
+endif
+
 PGXS := $(shell $(PG_CONFIG) --pgxs)
 include $(PGXS)
 override CPPFLAGS := $(subst $() -I, -isystem ,$(CPPFLAGS))
