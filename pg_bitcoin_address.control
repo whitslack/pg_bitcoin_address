@@ -1,0 +1,4 @@
+comment = 'Functions and types for Bitcoin addresses'
+default_version = '2.0'
+module_pathname = '$libdir/pg_bitcoin_address'
+trusted = true
