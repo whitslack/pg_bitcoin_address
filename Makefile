@@ -3,7 +3,7 @@ PKG_CONFIG ?= pkg-config
 
 MODULE_big = pg_bitcoin_address
 EXTENSION = pg_bitcoin_address
-DATA = pg_bitcoin_address--2.0.sql
+DATA = $(addprefix pg_bitcoin_address--,$(addsuffix .sql,2.0 2.0--2.1))
 OBJS = base58check.o bech32.o bitcoin_address.o module.o
 PG_CFLAGS = -Wextra $(addprefix -Werror=,implicit-function-declaration incompatible-pointer-types int-conversion) -Wcast-qual -Wconversion -Wno-declaration-after-statement -Wdisabled-optimization -Wdouble-promotion -Wno-implicit-fallthrough -Wmissing-declarations -Wno-missing-field-initializers -Wpacked -Wno-parentheses -Wno-sign-conversion -Wstrict-aliasing $(addprefix -Wsuggest-attribute=,pure const noreturn malloc) -fstrict-aliasing
 SHLIB_LINK =
